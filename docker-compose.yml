@@ -72,6 +72,14 @@ services:
       - monitor-net
     restart: unless-stopped
 
+  smart-exporter:
+    container_name: smart-exporter
+    image: eloo/smart-exporter
+    privileged: true
+    networks:
+      - monitor-net
+    restart: unless-stopped
+
   grafana:
     container_name: grafana
     image: grafana/grafana
