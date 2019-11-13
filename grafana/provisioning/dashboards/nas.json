@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1573675376469,
+  "iteration": 1573683398240,
   "links": [],
   "panels": [
     {
@@ -1221,7 +1221,7 @@
     },
     {
       "datasource": "Prometheus",
-      "description": "WD Red PoH Limit: 1.000.000\nWD Green PoH Limit: Unlisted",
+      "description": "WD Red PoH Limit: 1.000.000  \nWD Green PoH Limit: Unlisted",
       "gridPos": {
         "h": 5,
         "w": 5,
@@ -1359,7 +1359,7 @@
     },
     {
       "datasource": "Prometheus",
-      "description": "WD Red LCC Limit: 600.000\nWD Blue/Green  LCC Limit: 300.000",
+      "description": "WD Red LCC Limit: 600.000  \nWD Blue/Green  LCC Limit: 300.000",
       "gridPos": {
         "h": 5,
         "w": 5,
@@ -2127,5 +2127,5 @@
   "timezone": "",
   "title": "NAS",
   "uid": "t4YWI7Tik",
-  "version": 2
+  "version": 3
 }
