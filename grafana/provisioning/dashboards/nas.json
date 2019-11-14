@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1573761247161,
+  "iteration": 1573763179186,
   "links": [],
   "panels": [
     {
@@ -617,8 +617,8 @@
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 6,
-        "w": 11,
+        "h": 8,
+        "w": 10,
         "x": 9,
         "y": 16
       },
@@ -729,8 +729,8 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 2,
-        "x": 20,
+        "w": 3,
+        "x": 19,
         "y": 16
       },
       "id": 54,
@@ -899,8 +899,8 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 2,
-        "x": 20,
+        "w": 3,
+        "x": 19,
         "y": 19
       },
       "id": 52,
@@ -1141,6 +1141,66 @@
       }
     },
     {
+      "datasource": "Prometheus",
+      "description": "WD Red PoH Limit: 1.000.000  \nWD Green PoH Limit: Unlisted",
+      "gridPos": {
+        "h": 7,
+        "w": 5,
+        "x": 19,
+        "y": 22
+      },
+      "hideTimeOverride": false,
+      "id": 9,
+      "links": [],
+      "options": {
+        "displayMode": "lcd",
+        "fieldOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "defaults": {
+            "mappings": [],
+            "max": 300000,
+            "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "light-yellow",
+                "value": 100000
+              },
+              {
+                "color": "red",
+                "value": 200000
+              }
+            ],
+            "title": "${__series.name}",
+            "unit": "short"
+          },
+          "override": {},
+          "values": false
+        },
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.4.4",
+      "targets": [
+        {
+          "expr": "smart_parameter{id=\"9\",server=\"$server\"}",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{disk}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "title": "Power-on Hours",
+      "type": "bargauge"
+    },
+    {
       "backgroundColor": "rgba(128,128,128,0.1)",
       "colorMaps": [
         {
@@ -1169,7 +1229,7 @@
         "h": 6,
         "w": 10,
         "x": 9,
-        "y": 22
+        "y": 24
       },
       "highlightOnMouseover": true,
       "id": 13,
@@ -1270,72 +1330,12 @@
       "writeMetricNames": true
     },
     {
-      "datasource": "Prometheus",
-      "description": "WD Red PoH Limit: 1.000.000  \nWD Green PoH Limit: Unlisted",
-      "gridPos": {
-        "h": 6,
-        "w": 5,
-        "x": 19,
-        "y": 22
-      },
-      "hideTimeOverride": false,
-      "id": 9,
-      "links": [],
-      "options": {
-        "displayMode": "lcd",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "max": 300000,
-            "min": 0,
-            "thresholds": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "light-yellow",
-                "value": 100000
-              },
-              {
-                "color": "red",
-                "value": 200000
-              }
-            ],
-            "title": "${__series.name}",
-            "unit": "short"
-          },
-          "override": {},
-          "values": false
-        },
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.4.4",
-      "targets": [
-        {
-          "expr": "smart_parameter{id=\"9\",server=\"$server\"}",
-          "format": "time_series",
-          "instant": true,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{disk}}",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "title": "Power-on Hours",
-      "type": "bargauge"
-    },
-    {
       "columns": [],
       "datasource": null,
       "fontSize": "100%",
       "gridPos": {
-        "h": 6,
-        "w": 8,
+        "h": 7,
+        "w": 9,
         "x": 0,
         "y": 28
       },
@@ -1452,91 +1452,13 @@
       "type": "table"
     },
     {
-      "columns": [
-        {
-          "text": "Avg",
-          "value": "avg"
-        },
-        {
-          "text": "Min",
-          "value": "min"
-        },
-        {
-          "text": "Max",
-          "value": "max"
-        },
-        {
-          "text": "Current",
-          "value": "current"
-        }
-      ],
-      "datasource": "Prometheus",
-      "fontSize": "100%",
-      "gridPos": {
-        "h": 6,
-        "w": 11,
-        "x": 8,
-        "y": 28
-      },
-      "id": 11,
-      "links": [],
-      "options": {},
-      "pageSize": null,
-      "scroll": true,
-      "showHeader": true,
-      "sort": {
-        "col": 0,
-        "desc": true
-      },
-      "styles": [
-        {
-          "alias": "Time",
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "pattern": "Time",
-          "type": "date"
-        },
-        {
-          "alias": "",
-          "colorMode": "cell",
-          "colors": [
-            "rgba(50, 172, 45, 0.97)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(245, 54, 54, 0.9)"
-          ],
-          "decimals": 1,
-          "pattern": "/.*/",
-          "thresholds": [
-            "35.1",
-            "38"
-          ],
-          "type": "number",
-          "unit": "short"
-        }
-      ],
-      "targets": [
-        {
-          "expr": "smart_parameter{id=\"194\",server=\"$server\"}",
-          "format": "time_series",
-          "instant": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{disk}}",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "title": "Temperatures",
-      "transform": "timeseries_aggregations",
-      "type": "table"
-    },
-    {
       "datasource": "Prometheus",
       "description": "WD Red LCC Limit: 600.000  \nWD Blue/Green  LCC Limit: 300.000",
       "gridPos": {
         "h": 6,
         "w": 5,
         "x": 19,
-        "y": 28
+        "y": 29
       },
       "hideTimeOverride": false,
       "id": 8,
@@ -1590,6 +1512,84 @@
       "type": "bargauge"
     },
     {
+      "columns": [
+        {
+          "text": "Avg",
+          "value": "avg"
+        },
+        {
+          "text": "Min",
+          "value": "min"
+        },
+        {
+          "text": "Max",
+          "value": "max"
+        },
+        {
+          "text": "Current",
+          "value": "current"
+        }
+      ],
+      "datasource": "Prometheus",
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 5,
+        "w": 10,
+        "x": 9,
+        "y": 30
+      },
+      "id": 11,
+      "links": [],
+      "options": {},
+      "pageSize": null,
+      "scroll": true,
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": true
+      },
+      "styles": [
+        {
+          "alias": "Time",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "Time",
+          "type": "date"
+        },
+        {
+          "alias": "",
+          "colorMode": "cell",
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "decimals": 1,
+          "pattern": "/.*/",
+          "thresholds": [
+            "35.1",
+            "38"
+          ],
+          "type": "number",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "expr": "smart_parameter{id=\"194\",server=\"$server\"}",
+          "format": "time_series",
+          "instant": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{disk}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "title": "Temperatures",
+      "transform": "timeseries_aggregations",
+      "type": "table"
+    },
+    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -1601,7 +1601,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 34
+        "y": 35
       },
       "id": 6,
       "legend": {
@@ -1699,7 +1699,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 34
+        "y": 35
       },
       "id": 32,
       "legend": {
@@ -1793,7 +1793,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 41
+        "y": 42
       },
       "id": 36,
       "panels": [],
@@ -1815,7 +1815,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 42
+        "y": 43
       },
       "id": 38,
       "legend": {
@@ -1928,7 +1928,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 42
+        "y": 43
       },
       "id": 42,
       "legend": {
@@ -2041,7 +2041,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 50
+        "y": 51
       },
       "id": 44,
       "legend": {
@@ -2141,7 +2141,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 50
+        "y": 51
       },
       "id": 40,
       "legend": {
@@ -2299,5 +2299,5 @@
   "timezone": "",
   "title": "NAS",
   "uid": "t4YWI7Tik",
-  "version": 4
+  "version": 5
 }
