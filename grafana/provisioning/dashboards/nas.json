@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1573683398240,
+  "iteration": 1573761247161,
   "links": [],
   "panels": [
     {
@@ -899,7 +899,7 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 4,
+        "w": 2,
         "x": 20,
         "y": 19
       },
@@ -969,14 +969,375 @@
       "valueName": "avg"
     },
     {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": null,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 2,
+        "x": 22,
+        "y": 19
+      },
+      "id": 57,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "sum(node_md_disks - node_md_disks_active ) by (disk)",
+          "format": "time_series",
+          "instant": true,
+          "intervalFactor": 1,
+          "refId": "B"
+        }
+      ],
+      "thresholds": "1,10",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Unhealthy RAIDs",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "description": "Should be null",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 6,
+        "w": 9,
+        "x": 0,
+        "y": 22
+      },
+      "id": 56,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "avg(node_md_blocks - node_md_blocks_synced) by (device)",
+          "instant": false,
+          "legendFormat": "{{device}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "[RAID] Unsyced blocks",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "backgroundColor": "rgba(128,128,128,0.1)",
+      "colorMaps": [
+        {
+          "color": "#CCC",
+          "text": "N/A"
+        },
+        {
+          "color": "#508642",
+          "text": "active"
+        },
+        {
+          "color": "#f2c96d",
+          "text": "standby"
+        },
+        {
+          "color": "#CCC",
+          "text": "null"
+        }
+      ],
+      "crosshairColor": "#8F070C",
+      "datasource": null,
+      "display": "timeline",
+      "expandFromQueryS": 0,
+      "extendLastValue": true,
+      "gridPos": {
+        "h": 6,
+        "w": 10,
+        "x": 9,
+        "y": 22
+      },
+      "highlightOnMouseover": true,
+      "id": 13,
+      "legendSortBy": "-ms",
+      "lineColor": "rgba(0,0,0,0.1)",
+      "links": [],
+      "metricNameColor": "#000000",
+      "options": {},
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "rowHeight": 50,
+      "showDistinctCount": false,
+      "showLegend": true,
+      "showLegendNames": false,
+      "showLegendPercent": true,
+      "showLegendValues": true,
+      "showTimeAxis": false,
+      "showTransitionCount": true,
+      "targets": [
+        {
+          "expr": "hdparm_drive_state_active{server=\"$server\"}",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{disk}}",
+          "refId": "A"
+        }
+      ],
+      "textSize": 24,
+      "textSizeTime": 12,
+      "timeOptions": [
+        {
+          "name": "Years",
+          "value": "years"
+        },
+        {
+          "name": "Months",
+          "value": "months"
+        },
+        {
+          "name": "Weeks",
+          "value": "weeks"
+        },
+        {
+          "name": "Days",
+          "value": "days"
+        },
+        {
+          "name": "Hours",
+          "value": "hours"
+        },
+        {
+          "name": "Minutes",
+          "value": "minutes"
+        },
+        {
+          "name": "Seconds",
+          "value": "seconds"
+        },
+        {
+          "name": "Milliseconds",
+          "value": "milliseconds"
+        }
+      ],
+      "timePrecision": {
+        "name": "Minutes",
+        "value": "minutes"
+      },
+      "timeTextColor": "#d8d9da",
+      "title": "Disk State",
+      "type": "natel-discrete-panel",
+      "units": "short",
+      "useTimePrecision": false,
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "active",
+          "value": "1"
+        },
+        {
+          "op": "=",
+          "text": "standby",
+          "value": "0"
+        },
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueTextColor": "#000000",
+      "writeAllValues": false,
+      "writeLastValue": true,
+      "writeMetricNames": true
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "WD Red PoH Limit: 1.000.000  \nWD Green PoH Limit: Unlisted",
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 19,
+        "y": 22
+      },
+      "hideTimeOverride": false,
+      "id": 9,
+      "links": [],
+      "options": {
+        "displayMode": "lcd",
+        "fieldOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "defaults": {
+            "mappings": [],
+            "max": 300000,
+            "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "light-yellow",
+                "value": 100000
+              },
+              {
+                "color": "red",
+                "value": 200000
+              }
+            ],
+            "title": "${__series.name}",
+            "unit": "short"
+          },
+          "override": {},
+          "values": false
+        },
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.4.4",
+      "targets": [
+        {
+          "expr": "smart_parameter{id=\"9\",server=\"$server\"}",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{disk}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "title": "Power-on Hours",
+      "type": "bargauge"
+    },
+    {
       "columns": [],
       "datasource": null,
       "fontSize": "100%",
       "gridPos": {
-        "h": 10,
+        "h": 6,
         "w": 8,
         "x": 0,
-        "y": 22
+        "y": 28
       },
       "id": 20,
       "links": [],
@@ -1091,195 +1452,6 @@
       "type": "table"
     },
     {
-      "backgroundColor": "rgba(128,128,128,0.1)",
-      "colorMaps": [
-        {
-          "color": "#CCC",
-          "text": "N/A"
-        },
-        {
-          "color": "#508642",
-          "text": "active"
-        },
-        {
-          "color": "#f2c96d",
-          "text": "standby"
-        },
-        {
-          "color": "#CCC",
-          "text": "null"
-        }
-      ],
-      "crosshairColor": "#8F070C",
-      "datasource": null,
-      "display": "timeline",
-      "expandFromQueryS": 0,
-      "extendLastValue": true,
-      "gridPos": {
-        "h": 5,
-        "w": 11,
-        "x": 8,
-        "y": 22
-      },
-      "highlightOnMouseover": true,
-      "id": 13,
-      "legendSortBy": "-ms",
-      "lineColor": "rgba(0,0,0,0.1)",
-      "links": [],
-      "metricNameColor": "#000000",
-      "options": {},
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "rowHeight": 50,
-      "showDistinctCount": false,
-      "showLegend": true,
-      "showLegendNames": false,
-      "showLegendPercent": true,
-      "showLegendValues": true,
-      "showTimeAxis": false,
-      "showTransitionCount": true,
-      "targets": [
-        {
-          "expr": "hdparm_drive_state_active{server=\"$server\"}",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "{{disk}}",
-          "refId": "A"
-        }
-      ],
-      "textSize": 24,
-      "textSizeTime": 12,
-      "timeOptions": [
-        {
-          "name": "Years",
-          "value": "years"
-        },
-        {
-          "name": "Months",
-          "value": "months"
-        },
-        {
-          "name": "Weeks",
-          "value": "weeks"
-        },
-        {
-          "name": "Days",
-          "value": "days"
-        },
-        {
-          "name": "Hours",
-          "value": "hours"
-        },
-        {
-          "name": "Minutes",
-          "value": "minutes"
-        },
-        {
-          "name": "Seconds",
-          "value": "seconds"
-        },
-        {
-          "name": "Milliseconds",
-          "value": "milliseconds"
-        }
-      ],
-      "timePrecision": {
-        "name": "Minutes",
-        "value": "minutes"
-      },
-      "timeTextColor": "#d8d9da",
-      "title": "Disk State",
-      "type": "natel-discrete-panel",
-      "units": "short",
-      "useTimePrecision": false,
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "active",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "standby",
-          "value": "0"
-        },
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueTextColor": "#000000",
-      "writeAllValues": false,
-      "writeLastValue": true,
-      "writeMetricNames": true
-    },
-    {
-      "datasource": "Prometheus",
-      "description": "WD Red PoH Limit: 1.000.000  \nWD Green PoH Limit: Unlisted",
-      "gridPos": {
-        "h": 5,
-        "w": 5,
-        "x": 19,
-        "y": 22
-      },
-      "hideTimeOverride": false,
-      "id": 9,
-      "links": [],
-      "options": {
-        "displayMode": "lcd",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "max": 300000,
-            "min": 0,
-            "thresholds": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "light-yellow",
-                "value": 100000
-              },
-              {
-                "color": "red",
-                "value": 200000
-              }
-            ],
-            "title": "${__series.name}",
-            "unit": "short"
-          },
-          "override": {},
-          "values": false
-        },
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.4.4",
-      "targets": [
-        {
-          "expr": "smart_parameter{id=\"9\",server=\"$server\"}",
-          "format": "time_series",
-          "instant": true,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{disk}}",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "title": "Power-on Hours",
-      "type": "bargauge"
-    },
-    {
       "columns": [
         {
           "text": "Avg",
@@ -1301,10 +1473,10 @@
       "datasource": "Prometheus",
       "fontSize": "100%",
       "gridPos": {
-        "h": 5,
+        "h": 6,
         "w": 11,
         "x": 8,
-        "y": 27
+        "y": 28
       },
       "id": 11,
       "links": [],
@@ -1361,10 +1533,10 @@
       "datasource": "Prometheus",
       "description": "WD Red LCC Limit: 600.000  \nWD Blue/Green  LCC Limit: 300.000",
       "gridPos": {
-        "h": 5,
+        "h": 6,
         "w": 5,
         "x": 19,
-        "y": 27
+        "y": 28
       },
       "hideTimeOverride": false,
       "id": 8,
@@ -1429,7 +1601,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 32
+        "y": 34
       },
       "id": 6,
       "legend": {
@@ -1527,7 +1699,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 32
+        "y": 34
       },
       "id": 32,
       "legend": {
@@ -1561,7 +1733,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "100.0 - 100 * (node_filesystem_avail_bytes{server='$server',device !~'tmpfs',device!~'by-uuid',mountpoint!~'/var/.*',mountpoint!~'/sharedfolders/.*',mountpoint!~'/export/.*'} / node_filesystem_size_bytes{server=~'$server',device !~'tmpfs',device!~'by-uuid'})",
+          "expr": "100.0 - 100 * (node_filesystem_avail_bytes{server='localhost',device !~'tmpfs',device!~'by-uuid',mountpoint!~'/var/.*',mountpoint!~'/sharedfolders/.*',mountpoint!~'/export/.*'} / node_filesystem_size_bytes{server=~'localhost',device !~'tmpfs',device!~'by-uuid'})",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1621,7 +1793,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 39
+        "y": 41
       },
       "id": 36,
       "panels": [],
@@ -1643,7 +1815,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 40
+        "y": 42
       },
       "id": 38,
       "legend": {
@@ -1756,7 +1928,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 40
+        "y": 42
       },
       "id": 42,
       "legend": {
@@ -1869,7 +2041,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 48
+        "y": 50
       },
       "id": 44,
       "legend": {
@@ -1969,7 +2141,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 48
+        "y": 50
       },
       "id": 40,
       "legend": {
@@ -2096,7 +2268,7 @@
     ]
   },
   "time": {
-    "from": "now-12h",
+    "from": "now-2d",
     "to": "now"
   },
   "timepicker": {
@@ -2127,5 +2299,5 @@
   "timezone": "",
   "title": "NAS",
   "uid": "t4YWI7Tik",
-  "version": 3
+  "version": 4
 }
