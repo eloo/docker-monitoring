@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1573763179186,
+  "iteration": 1573765216051,
   "links": [],
   "panels": [
     {
@@ -617,8 +617,8 @@
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
-        "w": 10,
+        "h": 6,
+        "w": 11,
         "x": 9,
         "y": 16
       },
@@ -729,8 +729,8 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 3,
-        "x": 19,
+        "w": 2,
+        "x": 20,
         "y": 16
       },
       "id": 54,
@@ -899,8 +899,8 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 3,
-        "x": 19,
+        "w": 2,
+        "x": 20,
         "y": 19
       },
       "id": 52,
@@ -1141,66 +1141,6 @@
       }
     },
     {
-      "datasource": "Prometheus",
-      "description": "WD Red PoH Limit: 1.000.000  \nWD Green PoH Limit: Unlisted",
-      "gridPos": {
-        "h": 7,
-        "w": 5,
-        "x": 19,
-        "y": 22
-      },
-      "hideTimeOverride": false,
-      "id": 9,
-      "links": [],
-      "options": {
-        "displayMode": "lcd",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "max": 300000,
-            "min": 0,
-            "thresholds": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "light-yellow",
-                "value": 100000
-              },
-              {
-                "color": "red",
-                "value": 200000
-              }
-            ],
-            "title": "${__series.name}",
-            "unit": "short"
-          },
-          "override": {},
-          "values": false
-        },
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.4.4",
-      "targets": [
-        {
-          "expr": "smart_parameter{id=\"9\",server=\"$server\"}",
-          "format": "time_series",
-          "instant": true,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{disk}}",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "title": "Power-on Hours",
-      "type": "bargauge"
-    },
-    {
       "backgroundColor": "rgba(128,128,128,0.1)",
       "colorMaps": [
         {
@@ -1229,7 +1169,7 @@
         "h": 6,
         "w": 10,
         "x": 9,
-        "y": 24
+        "y": 22
       },
       "highlightOnMouseover": true,
       "id": 13,
@@ -1330,12 +1270,72 @@
       "writeMetricNames": true
     },
     {
+      "datasource": "Prometheus",
+      "description": "WD Red PoH Limit: 1.000.000  \nWD Green PoH Limit: Unlisted",
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 19,
+        "y": 22
+      },
+      "hideTimeOverride": false,
+      "id": 9,
+      "links": [],
+      "options": {
+        "displayMode": "lcd",
+        "fieldOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "defaults": {
+            "mappings": [],
+            "max": 300000,
+            "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "light-yellow",
+                "value": 100000
+              },
+              {
+                "color": "red",
+                "value": 200000
+              }
+            ],
+            "title": "${__series.name}",
+            "unit": "short"
+          },
+          "override": {},
+          "values": false
+        },
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.4.4",
+      "targets": [
+        {
+          "expr": "smart_parameter{id=\"9\",server=\"$server\"}",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{disk}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "title": "Power-on Hours",
+      "type": "bargauge"
+    },
+    {
       "columns": [],
       "datasource": null,
       "fontSize": "100%",
       "gridPos": {
-        "h": 7,
-        "w": 9,
+        "h": 6,
+        "w": 8,
         "x": 0,
         "y": 28
       },
@@ -1452,66 +1452,6 @@
       "type": "table"
     },
     {
-      "datasource": "Prometheus",
-      "description": "WD Red LCC Limit: 600.000  \nWD Blue/Green  LCC Limit: 300.000",
-      "gridPos": {
-        "h": 6,
-        "w": 5,
-        "x": 19,
-        "y": 29
-      },
-      "hideTimeOverride": false,
-      "id": 8,
-      "links": [],
-      "options": {
-        "displayMode": "lcd",
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "mappings": [],
-            "max": 400000,
-            "min": 0,
-            "thresholds": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "#EAB839",
-                "value": 150000
-              },
-              {
-                "color": "red",
-                "value": 300000
-              }
-            ],
-            "title": "${__series.name}",
-            "unit": "short"
-          },
-          "override": {},
-          "values": false
-        },
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.4.4",
-      "targets": [
-        {
-          "expr": "smart_parameter{id=\"193\",server=\"$server\"}",
-          "format": "time_series",
-          "instant": true,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{disk}}",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "title": "LCC",
-      "type": "bargauge"
-    },
-    {
       "columns": [
         {
           "text": "Avg",
@@ -1533,10 +1473,10 @@
       "datasource": "Prometheus",
       "fontSize": "100%",
       "gridPos": {
-        "h": 5,
-        "w": 10,
-        "x": 9,
-        "y": 30
+        "h": 6,
+        "w": 11,
+        "x": 8,
+        "y": 28
       },
       "id": 11,
       "links": [],
@@ -1590,6 +1530,66 @@
       "type": "table"
     },
     {
+      "datasource": "Prometheus",
+      "description": "WD Red LCC Limit: 600.000  \nWD Blue/Green  LCC Limit: 300.000",
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 19,
+        "y": 28
+      },
+      "hideTimeOverride": false,
+      "id": 8,
+      "links": [],
+      "options": {
+        "displayMode": "lcd",
+        "fieldOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "defaults": {
+            "mappings": [],
+            "max": 400000,
+            "min": 0,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 150000
+              },
+              {
+                "color": "red",
+                "value": 300000
+              }
+            ],
+            "title": "${__series.name}",
+            "unit": "short"
+          },
+          "override": {},
+          "values": false
+        },
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.4.4",
+      "targets": [
+        {
+          "expr": "smart_parameter{id=\"193\",server=\"$server\"}",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{disk}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "title": "LCC",
+      "type": "bargauge"
+    },
+    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -1599,9 +1599,9 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 7,
-        "w": 12,
+        "w": 8,
         "x": 0,
-        "y": 35
+        "y": 34
       },
       "id": 6,
       "legend": {
@@ -1689,6 +1689,100 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "Prometheus",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 8,
+        "y": 34
+      },
+      "id": 58,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "hideEmpty": true,
+        "hideZero": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "rate(smart_parameter{name=~\".*Error.*\"}[5m])",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{name}} - {{disk}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Smart errors rate",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
       "decimals": 1,
       "editable": true,
       "error": false,
@@ -1697,9 +1791,9 @@
       "grid": {},
       "gridPos": {
         "h": 7,
-        "w": 12,
-        "x": 12,
-        "y": 35
+        "w": 8,
+        "x": 16,
+        "y": 34
       },
       "id": 32,
       "legend": {
@@ -1793,7 +1887,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 42
+        "y": 41
       },
       "id": 36,
       "panels": [],
@@ -1815,7 +1909,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 43
+        "y": 42
       },
       "id": 38,
       "legend": {
@@ -1928,7 +2022,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 43
+        "y": 42
       },
       "id": 42,
       "legend": {
@@ -2041,7 +2135,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 51
+        "y": 50
       },
       "id": 44,
       "legend": {
@@ -2141,7 +2235,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 51
+        "y": 50
       },
       "id": 40,
       "legend": {
